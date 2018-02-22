@@ -125,7 +125,7 @@
                             </div>
 
                             <div class="am-form-group">
-                                <label for="user-weibo" class="am-u-sm-3 am-form-label">添加分类 <span class="tpl-form-line-small-title">Type</span></label>
+                                <label for="user-weibo" class="am-u-sm-3 am-form-label">修改分类 tags <span class="tpl-form-line-small-title">Type</span></label>
                                 <div class="am-u-sm-9 ">
                                     <div class="am-form-group">
                                         <select data-am-selected="{btnWidth: '30%', btnSize: 'sm', btnStyle: 'secondary' ,maxHeight: 100,searchBox: 1}" name="cate" placeholder="记得选分类" >
@@ -139,6 +139,25 @@
                                             @endforeach
                                         </select>
                                         <input type="hidden" value="{{$post->cate_id}}" name="selected_cate">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <label for="user-weibo" class="am-u-sm-3 am-form-label">修改专栏 Column <span class="tpl-form-line-small-title">Column</span></label>
+                                <div class="am-u-sm-9 ">
+                                    <div class="am-form-group">
+                                        <select data-am-selected="{btnWidth: '30%', btnSize: 'sm', btnStyle: 'secondary' ,maxHeight: 100,searchBox: 1}" name="column" placeholder="不选默认为空" >
+                                            <option selected value=""></option>
+                                            @foreach($columns as $column)
+                                                @if($post->column_id == $column->id)
+                                                    <option value="{{$column->id}}" selected>{{$column->name}}</option>
+                                                @else
+                                                    <option value="{{$column->id}}">{{$column->name}}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        <input type="hidden" value="{{$post->column_id}}" name="selected_column">
                                     </div>
                                 </div>
                             </div>
@@ -212,6 +231,9 @@
         $(function () {
             $("[name='cate']").on('change', function() {
                 $('input[name=selected_cate]').val($(this).val());
+            });
+            $("[name='column']").on('change', function() {
+                $('input[name=selected_column]').val($(this).val());
             });
         });
 

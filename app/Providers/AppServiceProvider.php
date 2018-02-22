@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Model\Category;
+use App\Model\Column;
 use App\Model\Tag;
 use App\Model\Web;
 use Illuminate\Support\ServiceProvider;
@@ -46,6 +47,11 @@ class AppServiceProvider extends ServiceProvider
         \View::composer('layout.list',function($view) use ($coCount){
             $view->with('coCount',$coCount);
         });
+        $columnCount = Column::all()->count();
+        \View::composer('layout.list',function($view) use ($columnCount){
+            $view->with('columnCount',$columnCount);
+        });
+
         $newComments = Comment::whereNull('comment_id')->where('read',0)->orderBy('created_at','desc')->get();
         \View::composer('layout.nav',function($view) use ($newComments){
             $view->with('newComments',$newComments);
@@ -65,8 +71,13 @@ class AppServiceProvider extends ServiceProvider
         \View::composer('user.sidebar',function($view) use ($tags){
             $view->with('tags', $tags);
         });
+        //专题
+        $columns = Column::all();
+        \View::composer('user.sidebar',function($view) use ( $columns){
+            $view->with('columns', $columns);
+        });
 
-
+        //侧边栏cate
         $cates = Category::whereNull('pid')->orderBy('id','desc')->get();
         \View::composer('user.nav',function($view) use ($cates){
             $view->with('cates', $cates);
@@ -75,17 +86,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('cates', $cates);
         });
 
-
         //底部备案
         \View::composer('user.footer',function($view) use ($webConfig){
             $view->with('webConfig',$webConfig);
         });
 
-        //算法专栏
-        $algorithm = Category::where('cname','like','%算法')->whereNull('pid')->first();
-        \View::composer('user.sidebar',function($view) use ($algorithm){
-            $view->with('algorithm',$algorithm);
-        });
     }
 
     /**

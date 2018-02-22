@@ -7,15 +7,15 @@
                     <img src="{{$post->p_image}}" alt="/post/{{$post->id}}" class="blog-entry-img"  >
                 </div>
                 <div class="am-u-lg-9 am-u-md-12 am-u-sm-12 blog-entry-text">
-                    <span> {{$post->category->cname}}I &nbsp;</span>
+                    <span> {{$post->category->cname}}&nbsp;</span>
                     <span>{{$post->created_at->toFormattedDateString()}}</span>
                     <span>
                         @foreach($post->tags as $tag)
                             <span class="label label-sm label-danger">{{$tag->name}}</span>
                         @endforeach
                     </span>
-                    <h1><a href="/post/{{$post->id}}">{{str_limit($post->title,20,'...')}}</a></h1>
-                    <p>{!!str_limit($post->content,50,'...')!!}
+                    <h1><a href="/post/{{$post->id}}">{{str_limit(strip_tags($post->title),20,'...')}}</a></h1>
+                    <p>{!!str_limit(strip_tags($post->content),50,'...')!!}
                     </p>
                 </div>
             </article>

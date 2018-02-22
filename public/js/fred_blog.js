@@ -43,8 +43,11 @@ function showComment(id,title, time,nickname,content) {
     });
     $('#my-popup').on('closed.modal.amui',function(){
         $.ajax({
-            url: '/admin/comment_read/'+id,
+            url: '/admin/comment_read',
             dataType: 'json',
+            data: {
+              'id' : id
+            },
             method: 'POST',
             success(response){
                 if(response.code === 200){

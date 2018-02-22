@@ -137,7 +137,21 @@
                             </div>
 
                             <div class="am-form-group">
-                                <label for="user-intro" class="am-u-sm-3 am-form-label">文章标签</label>
+                                <label for="user-intro" class="am-u-sm-3 am-form-label">文章专栏 colmun</label>
+                                <div class="am-u-sm-9">
+                                    <select data-am-selected="{btnWidth: '30%', btnSize: 'sm', btnStyle: 'secondary' ,maxHeight: 100,searchBox: 1}" name="column" placeholder="不选默认为空">
+                                        <option selected value=""></option>
+                                        @foreach($columns as $column)
+                                            <option value="{{$column->id}}" >{{$column->name}}</option>
+                                        @endforeach
+                                        <input type="hidden" value="0" name="selected_column">
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="am-form-group">
+                                <label for="user-intro" class="am-u-sm-3 am-form-label">文章标签 tags</label>
                                 <div class="am-u-sm-9">
                                   @foreach($tags as $tag)
                                         <label class="am-checkbox-inline">
@@ -149,7 +163,7 @@
 
 
                             <div class="am-form-group">
-                                <label for="user-intro" class="am-u-sm-3 am-form-label">文章内容</label>
+                                <label for="user-intro" class="am-u-sm-3 am-form-label">文章内容 content</label>
                                 <div class="am-u-sm-9">
                                     <script id="editor" type="text/plain" class="ueditor" >
                                         {!! old('contents') !!}
@@ -190,6 +204,9 @@
         $(function () {
             $("[name='cate']").on('change', function() {
                 $('input[name=selected_cate]').val($(this).val());
+            });
+            $("[name='column']").on('change', function() {
+                $('input[name=selected_column]').val($(this).val());
             });
         })
     </script>

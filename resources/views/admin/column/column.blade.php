@@ -2,16 +2,16 @@
 @section('content')
     <div class="tpl-content-wrapper">
         <div class="tpl-content-page-title">
-            标签管理
+            专栏管理
         </div>
         <ol class="am-breadcrumb">
             <li><a href="/admin/home" class="am-icon-home">首页</a></li>
-            <li class="am-active">标签管理</li>
+            <li class="am-active">专栏管理</li>
         </ol>
         <div class="tpl-portlet-components">
             <div class="portlet-title">
                 <div class="caption font-green bold">
-                    <span class="am-icon-code"></span>     标签管理
+                    <span class="am-icon-code"></span>     专栏管理
                 </div>
                 <div class="tpl-portlet-input tpl-fz-ml">
                     <div class="portlet-input input-small input-inline">
@@ -40,28 +40,31 @@
                                 <thead>
                                 <tr>
                                     <th class="table-id">ID</th>
-                                    <th class="table-title">标签名称</th>
+                                    <th class="table-title">专栏名称</th>
+                                    <th class="table-title">显示文章</th>
                                     <th class="table-title">创建日期</th>
                                     <th class="table-set">操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                 @foreach($tags as $tag)
+                                 @foreach($columns as $column)
                                      <tr >
-                                     <td >{{$tag->id}}</td>
-                                     <td >{{$tag->name}}</td>
-                                     <td >{{$tag->created_at}}</td>
+                                     <td >{{$column->id}}</td>
+                                     <td >{{$column->name}}</td>
+                                         <td><a href="javascript:;" onclick="showAll({{$column->id}})"
+                                                data-am-modal="{target: '#my-popup'}" class="am-icon-pencil-square-o">点我显示</a></td>
+                                     <td >{{$column->created_at}}</td>
                                      <td>
                                          <div class="am-btn-toolbar">
                                              <div class="am-btn-group am-btn-group-xs">
                                                  <a href="javascript:;"
-                                                    onclick="updateTag('{{$tag->id}}','{{$tag->name}}')"
+                                                    onclick="updatecolumn('{{$column->id}}','{{$column->name}}')"
                                                     class="am-btn am-btn-default am-btn-xs am-text-secondary"
                                                     data-am-modal="{target: '#my-input'}"><span
                                                              class="am-icon-pencil-square-o"></span> 编辑</a>
                                                  <a href="javascript:;"
                                                     class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"
-                                                    onclick="deleteTag({{$tag->id}})"><span
+                                                    onclick="deletecolumn({{$column->id}})"><span
                                                              class="am-icon-trash-o"></span> 删除</a>
                                              </div>
                                          </div>
@@ -83,8 +86,8 @@
 @endsection()
 @section('_js')
     <script>
-        //更新Tag
-        function updateTag(id, name) {
+        //更新column
+        function updatecolumn(id, name) {
             $('#my-input').on('open.modal.amui', function () {
                 $('#needName').css({'color':''});
                 $(this).find('input').val(name);
@@ -95,13 +98,13 @@
                     let name = $('.am-modal-prompt-input').val();
                     if(name){
                         $.ajax({
-                            url: '/admin/tag/' + id,
+                            url: '/admin/column/' + id,
                             data: {'name': name},
                             method: 'PUT',
                             dataType: 'json',
                             success(response) {
                                 if (response.code === 200) {
-                                    location.href = '/admin/tag'
+                                    location.href = '/admin/column'
                                 } else {
                                     alert("世事无常~木有修改成功!");
                                 }
@@ -124,8 +127,8 @@
 
         }
 
-        //删除一个Tag
-        function deleteTag(id) {
+        //删除一个column
+        function deletecolumn(id) {
                 $('#showSuccess').html('');
                 let node = '<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">'
                     + '<div class="am-modal-dialog">'
@@ -143,12 +146,12 @@
                         relatedTarget: this,
                         onConfirm: function (options) {
                             $.ajax({
-                                url: '/admin/tag/' + id,
+                                url: '/admin/column/' + id,
                                 method: 'DELETE',
                                 dataType: 'json',
                                 success(response) {
                                     if (response.code === 200) {
-                                        location.href = '/admin/tag';
+                                        location.href = '/admin/column';
                                     } else {
                                         alert('估计是服务器挂了~，去查查吧');
                                     }
@@ -162,7 +165,7 @@
                 })
         }
 
-        //新建一个标签
+        //新建一个专栏
         $(function () {
             $('#ajaxInput1').on('click', function () {
                 $('#my-input').modal({
@@ -170,13 +173,13 @@
                     onConfirm: function (e) {
                         if(e.data){
                             $.ajax({
-                                url: '/admin/tag',
+                                url: '/admin/column',
                                 data: {'name': e.data},
                                 dataType: 'json',
                                 type: 'POST',
                                 success(response) {
                                     if (response.code === 200) {
-                                        location.href = '/admin/tag'
+                                        location.href = '/admin/column'
                                     } else {
                                         alert("世事无常~木有新建成功!")
                                     }
@@ -198,20 +201,20 @@
             });
         });
 
-        //修改一个标签
+        //修改一个专栏
         $(function () {
             $('#ajaxInput2').on('click', function () {
                 $('#my-input').modal({
                     relatedTarget: this,
                     onConfirm: function (e) {
                         $.ajax({
-                            url: '/admin/tag',
+                            url: '/admin/column',
                             data: {'name': e.data},
                             dataType: 'json',
                             type: 'POST',
                             success(response) {
                                 if (response.code === 200) {
-                                    location.href = '/admin/tag'
+                                    location.href = '/admin/column'
                                 } else {
                                     alert("世事无常~木有添加成功!")
                                 }
@@ -230,5 +233,22 @@
             });
         });
 
+        //显示专栏文章
+        function showAll(id) {
+            $('#my-popup').on('open.modal.amui', function () {
+                $.ajax({
+                    url: '/admin/this_column/' + id,
+                    dataType: 'json',
+                    method: 'POST',
+                    success(response) {
+                        $('#my-popup').find('h4').children().empty();
+                        response.posts.forEach(function (val, index) {
+                            $('#my-popup').find('h4').append('<li>'+'<a href="/admin/post/'+val.id+'/edit">' + val.title.slice(0, 10) + '...' + '</a></li>');
+                        })
+                    }
+                })
+            })
+
+        }
     </script>
 @endsection()

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PostRequest;
 use App\Model\Category;
+use App\Model\Column;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Post;
@@ -18,8 +19,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //这里我喜欢只取最新的前10个文章，如果觉得有需要加个分页就行了。
-        $posts = Post::orderBy('created_at', 'desc')->take(10)->get();
+        //显示文章列表
+        $posts = Post::orderBy('created_at', 'desc')->paginate(15);
         $cates = Category::whereNull('pid')->get();
         return view('admin.post.post', compact('posts', 'cates'));
     }
@@ -32,8 +33,9 @@ class PostController extends Controller
     public function create()
     {
         $cates = Category::whereNull('pid')->orderBy('id','desc')->get();
+        $columns = Column::all();
         $tags = Tag::all();
-        return view('admin.post.postCreate', compact('cates', 'tags'));
+        return view('admin.post.postCreate', compact('cates', 'tags','columns'));
     }
 
     /**
@@ -51,6 +53,7 @@ class PostController extends Controller
         $post->p_image = $request->pImage_input;
         $post->content = $request->contents;
         $post->intro = $request->intro;
+        $post->column_id = $request->selected_column;
         $post->visit = 1;
         $post->save();
 
@@ -74,17 +77,6 @@ class PostController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int $id
@@ -95,7 +87,8 @@ class PostController extends Controller
         $cates = Category::whereNull('pid')->orderBy('id','desc')->get();
         $post = Post::find($id);
         $tags = Tag::all();
-        return view('admin.post.postEdit', compact('post', 'tags', 'cates'));
+        $columns = Column::all();
+        return view('admin.post.postEdit', compact('post', 'tags', 'cates','columns'));
     }
 
     /**
@@ -114,6 +107,7 @@ class PostController extends Controller
         $post->p_image = $request->pImage_input;
         $post->content = $request->contents;
         $post->intro = $request->intro;
+        $post->column_id = $request->selected_column;
         $post->save();
 
         //更新关联模型category

@@ -45,4 +45,9 @@ class Post extends Model
         return $this->hasMany('App\Model\Comment','post_id','id');
     }
 
+    //定义文章专栏关联
+    public function column()
+    {
+        return $this->belongsTo('App\Model\Column','column_id','id');
+    }
 }

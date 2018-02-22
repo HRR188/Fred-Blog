@@ -53,6 +53,7 @@
                                     <th class="table-title">标题</th>
                                     <th class="table-type">类别</th>
                                     <th class="table-author am-hide-sm-only">标签</th>
+                                    <th class="table-author am-hide-sm-only">专栏</th>
                                     <th class="table-date am-hide-sm-only">发布日期</th>
                                     <th class="table-set">操作</th>
                                 </tr>
@@ -74,6 +75,9 @@
                                             @endforeach
 
                                         </td>
+                                        <td class="am-hide-sm-only">
+                                                <span class="label label-sm label-primary">{{$post->column['name']}}</span>
+                                        </td>
                                         <td class="am-hide-sm-only">{{$post->created_at}}</td>
                                         <td>
                                             <div class="am-btn-toolbar">
@@ -91,6 +95,7 @@
 
                         </form>
                     </div>
+                    {{$posts->links()}}
                     <div id="showSuccess"></div>
                 </div>
             </div>

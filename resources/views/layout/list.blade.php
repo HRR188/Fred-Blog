@@ -49,6 +49,14 @@
                                 {{ $tCount}}
                             </i>
                         </a>
+
+                        <a href="/admin/column">
+                            <i class="am-icon-angle-right"></i>
+                            <span>专栏管理</span>
+                            <i class="tpl-left-nav-content tpl-badge-danger">
+                                {{  $columnCount}}
+                            </i>
+                        </a>
                         <a href="/admin/recover_posts">
                             <i class="am-icon-angle-right"></i>
                             <span>回收站</span>

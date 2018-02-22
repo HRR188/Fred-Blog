@@ -9,6 +9,7 @@ use App\Model\Web;
 use App\Model\Post;
 use App\Model\Tag;
 use App\Model\Category;
+use App\Model\Column;
 class IndexController extends Controller
 {
     //显示主页
@@ -32,5 +33,12 @@ class IndexController extends Controller
             array_push($ids,$v->id);
         }
         return view('user.post',compact('post','ids'));
+    }
+
+    //显示专栏文章
+    public function showColumnPosts(Request $request)
+    {
+        $columnPosts = Column::find($request->id)->posts()->get();
+        return response()->json(['columnPosts'=>$columnPosts]);
     }
 }

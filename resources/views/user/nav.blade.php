@@ -17,7 +17,7 @@
                             </ul>
                         </li>
                         <li><a class="nav" href="http://demo.fyguoji.cn">本博客后台演示网址</a></li>
-                        <li><a class="nav" href="http://download.fyguoji.cn/blog" download="blog">下载本博客源代码</a></li>
+                        <li><a class="nav" href="http://laravel-video1.oss-cn-beijing.aliyuncs.com/demo/Fred-Blog.zip" download="blog">下载本博客源代码</a></li>
                     </ul>
                     <div style="z-index:9999;">
                                 <div class="am-u-sm-12 am-u-md-3" style="float:right">

@@ -16,13 +16,13 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cate_id');
+            $table->integer('column_id');
             $table->softDeletes();
-			$table->string('intro',1000);
+            $table->timestamps();
             $table->string('title');
             $table->mediumText('content');
             $table->string('p_image',200)->default('/assets/img/pimage.png');
             $table->integer('visit');
-			$table->timestamps();
         });
     }
 

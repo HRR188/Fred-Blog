@@ -1,24 +1,14 @@
 
 <div class="am-u-md-4 am-u-sm-12 blog-sidebar">
     <div class="blog-sidebar-widget blog-bor">
-        <h2 class="blog-title"><span>php相关算法专栏</span></h2>
+        <h2 class="blog-title"><span>技术深度探讨专栏</span></h2>
         <ul class="am-list">
-            @if(isset($algorithm))
-                @php
-                $count = 0;
-                $arr = $algorithm->posts->reverse();
-                @endphp
-                @foreach($arr as $v)
-                    <li><a href="/post/{{$v->id}}">{{$v->title}}</a></li>
-                   <div hidden>$count++</div>
-                    @if($count>5)
-                        @break
-                    @endif
-                @endforeach
-            @endif
+            @foreach($columns as $column)
+                <a href="javascript:;" onclick="showColumnPost({{$column->id}})">{{$column->name}}</a>
+            @endforeach
+
         </ul>
     </div>
-
 
     <div class="blog-clear-margin blog-sidebar-widget blog-bor am-g ">
         <h2 class="blog-title"><span>分类</span></h2>

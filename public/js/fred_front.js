@@ -139,26 +139,14 @@ $(function(){
     });
 
 });
-
 //成功的Modal
 $(function(){
     $('#my-success').modal();
     setTimeout(function(){
         $('#my-success').modal('close');
     },2000)
-})
-//
-// function catePost(id){
-//     $.ajax({
-//         url: '/cate_post/'+id,
-//         dataType: 'json',
-//         method: 'POST',
-//         success(response){
-//             console.log(response.posts);
-//         }
-//     })
-// }
-
+});
+//切换骚头像~
 $(function(){
     $('#weixin').click(function(){
         $('#intro').children('h2').children().html('微信');
@@ -170,5 +158,46 @@ $(function(){
             $('#intro').children('img').eq(0).show('slow');
         },5000);
     });
-
 });
+//文章专栏
+function showColumnPost(id){
+    $.ajax({
+        url: '/column',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            'id': id
+        },
+        success(response){
+            if(response.columnPosts){
+                $('#index').children().hide();
+                let count = response.columnPosts.length;
+                if(count>0){
+                    $('#index').append('<h3>专栏文章有: '+count+'篇</h3>');
+                    response.columnPosts.forEach(function(val,index){
+                        $('#index').append(' <article class="am-g blog-entry-article">'+
+                            '<div class="am-u-lg-3 am-u-md-12 am-u-sm-12 blog-entry-img">'+
+                            '<img class="blog-entry-img" alt=/post/'+val.id+' src='+val.p_image+'>'+
+                            '</div>'+
+                            '<div class="am-u-lg-9 am-u-md-12 am-u-sm-12 blog-entry-text">'+
+                            '<span>'+val.created_at+'</span>'+
+                            '<h1><a href=/post/'+val.id+'>'+val.title+'&nbsp;</a></h1>'+
+                            '<p>'+val.intro+'</p>'+
+                            '</div>'+
+                            '</article>')
+                    });
+                }else{
+                    $('#index').append(' <h3>该专栏没有文章了，sorry~</h3>'+
+                        '<img src="/img/no-post.jpg" id="no-post">');
+                    $('input[name=search]').val('');
+                    setTimeout(function(){
+                        $('#index').children().show();
+                        $('#index').find('h3').remove();
+                        $('#no-post').remove();
+                    },3000)
+                }
+
+            }
+        }
+    });
+}
