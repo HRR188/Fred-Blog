@@ -3,17 +3,20 @@
 
 本项目使用 PHP 框架 Laravel 5.5 进行开发。 这是博主给自己搭建的专注内容的博文平台，UI什么的都做的比较随意（比如前台弄了乡村非主流canvas3D极光效果）。还是衷心欢迎大家在此基础上自由开发，搞得网站漂亮人人爱~。
 
--- 废话不说，上图，看上了再往下看
---前台：
- --
-![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/a.gif)
 --
-![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/b.gif)
+废话不说，上图，看上了再往下看   
+前台：
+![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/a.gif)  
 --
-![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/c.gif)
---后台：    
---![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/d.gif)
---![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/e.gif)
+![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/b.gif)  
+--
+![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/c.gif)   
+
+后台：   
+--
+![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/d.gif)   
+--
+![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/e.gif)
 
 博客功能具有以下功能
 分类管理
