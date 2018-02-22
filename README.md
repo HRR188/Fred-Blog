@@ -53,12 +53,12 @@ CentOs 6.8
 然后在.env的配置文件里面修改如下配置项：
 
 #Algolia驱动
-> ALGOLIA_APP_ID=
+> ALGOLIA_APP_ID=  
 > ALGOLIA_SECRET=
 
 #数据库
-> DB_DATABASE=
-> DB_USERNAME=
+> DB_DATABASE=  
+> DB_USERNAME=  
 > DB_PASSWORD=
 
 5. 执行数据库迁移（想要初始数据也可以看下一步）
@@ -70,26 +70,35 @@ php artisan migrate
 代码里自带编译后的前端代码，如果你不想开发前端样式的话，你是不需要配置前端工具集的，可本部分，看前后台入口部分
 
 前后台入口
-> 前台为：yourdomain.com
+> 前台为：yourdomain.com  
 > 后台为：yourdomain.com/admin/login
 
 初始账号及密码
-> email: fredchen188@.com
+> email: fredchen188@.com  
 > passwrd: admin 
 
-如果要开启调试模式，请修改 .env 文件， APP_ENV=local 和 APP_DEBUG=true 。
+如果要开启调试模式，请修改 .env 文件， APP_ENV=local 和 APP_DEBUG=true  
+> 首页地址：http://example.com/  
 
-> 首页地址：http://example.com/
-> 管理后台：http://example.com/myp
-> 默认用户名：fredchen188@gmail.com 
-> 密码：admin
+> 管理后台：http://example.com/login  
 
-至此, 安装完成。
-注：如果使用导入数据后，想要看显示初始化的图片，就请在数据库改几处图片的url。
-1：posts 表的 p_image字段内容，把b.com 改为你的网址
-2：admins 表的avatar字段内容，把b.com 改为你的网址
-3：webs 表的logo字段内容，把.com 改为你的网址
-这些都只是没有含义的图片和文字，还是请老铁们自己上传图片吧。
+> 默认用户名：fredchen188@gmail.com  
+
+> 密码：admin  
+
+
+至此, 安装完成。  
+
+注：如果使用导入数据后，想要看显示初始化的图片，就请在数据库改几处图片的url。  
+
+1：posts 表的 p_image字段内容，把b.com 改为你的网址  
+
+2：admins 表的avatar字段内容，把b.com 改为你的网址  
+
+3：webs 表的logo字段内容，把.com 改为你的网址  
+
+这些都只是没有含义的图片和文字，还是请老铁们自己上传图片吧。  
+
 
 License
 大家想怎么玩就怎么玩~
