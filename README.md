@@ -37,8 +37,8 @@ UEdeitor富文本编辑器
 Nginx 1.8+
 PHP 7.0+
 MySQL 5.6+
-CentOs 6.8
-部署/安装
+CentOS 6.8
+部署/安装  
 需要在系统上安装了基本的PHP运行环境、PHP包管理工具composer
 
 基础安装
@@ -61,13 +61,20 @@ CentOs 6.8
 > DB_USERNAME=  
 > DB_PASSWORD=
 
-5. 执行数据库迁移（想要初始数据也可以看下一步）
-php artisan migrate
+5. 执行数据库迁移（想要初始数据也可以看下一步）  
+> php artisan migrate
 
 6.或者你也可以直接导入数据库结构和数据文件: 导入数据库文件.sql
 
-前端工具集安装
-代码里自带编译后的前端代码，如果你不想开发前端样式的话，你是不需要配置前端工具集的，可本部分，看前后台入口部分
+7.记得要，或者用phpstorm直接根据提示init一下就行了
+> composer dumpautoload  
+
+8.改了配置最好这样
+> php artisan configL:clear   
+
+9.部署时候为了更快你可以  
+> php artisan route:cache  
+> php artisan config:cache  
 
 前后台入口
 > 前台为：yourdomain.com  
