@@ -5,17 +5,17 @@
 
 废话不说，上图，看上了再往下看   
 前台：
---
+
 ![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/a.gif)  --
---
+
 ![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/b.gif)  
---
+
 ![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/c.gif)   
 
 后台：   
---
+
 ![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/d.gif)   
---
+
 ![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/e.gif)
 
 博客功能具有以下功能
