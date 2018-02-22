@@ -58,18 +58,19 @@ php artisan migrate
 代码里自带编译后的前端代码，如果你不想开发前端样式的话，你是不需要配置前端工具集的，可本部分，看前后台入口部分
 
 前后台入口
-前台为：yourdomain.com
-后台为：yourdomain.com/admin/login
+> 前台为：yourdomain.com
+> 后台为：yourdomain.com/admin/login
 
 初始账号及密码
-email: fredchen188@.com
-passwrd: admin 
+> email: fredchen188@.com
+> passwrd: admin 
 
 如果要开启调试模式，请修改 .env 文件， APP_ENV=local 和 APP_DEBUG=true 。
 
-首页地址：http://example.com/
-管理后台：http://example.com/myp
-默认用户名：mypersimmon@cong5.net 密码：mypersimmon
+> 首页地址：http://example.com/
+> 管理后台：http://example.com/myp
+> 默认用户名：fredchen188@gmail.com 
+> 密码：admin
 
 至此, 安装完成。
 
