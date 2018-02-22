@@ -1,9 +1,17 @@
 # Fred-Blog
 本项目迁移至github,欢迎老铁们下载使用
 
-本项目使用 PHP 框架 Laravel 5.5 进行开发。 这是博主给自己搭建的博文平台，具有普遍性的博客功能，欢迎大家在此基础上自由开发。PS：部分代码带有吐槽注释~
-  <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/demo_a.gif)
+本项目使用 PHP 框架 Laravel 5.5 进行开发。 这是博主给自己搭建的专注内容的博文平台，UI什么的都做的比较随意（比如前台弄了乡村非主流canvas3D极光效果）。还是衷心欢迎大家在此基础上自由开发，搞得网站漂亮人人爱~。
 
+  <br />废话不说，上图，看上了再往下看
+  <br />前台：
+  <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/a.gif)
+    <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/b.gif)
+      <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/c.gif)
+    <br />后台：    
+   <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/e.gif)
+   <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/f.gif)
+   
 博客功能具有以下功能
 分类管理
 文章管理
