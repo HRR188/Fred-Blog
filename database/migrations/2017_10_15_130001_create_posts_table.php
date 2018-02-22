@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->softDeletes();
 			$table->string('intro',1000);
             $table->string('title');
-            $table->string('content',12000);
+            $table->mediumText('content');
             $table->string('p_image',200)->default('/assets/img/pimage.png');
             $table->integer('visit');
 			$table->timestamps();
