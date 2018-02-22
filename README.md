@@ -85,6 +85,11 @@ php artisan migrate
 > 密码：admin
 
 至此, 安装完成。
+注：如果使用导入数据后，想要看显示初始化的图片，就请在数据库改几处图片的url。
+1：posts 表的 p_image字段内容，把b.com 改为你的网址
+2：admins 表的avatar字段内容，把b.com 改为你的网址
+3：webs 表的logo字段内容，把.com 改为你的网址
+这些都只是没有含义的图片和文字，还是请老铁们自己上传图片吧。
 
 License
 大家想怎么玩就怎么玩~
