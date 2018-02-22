@@ -8,10 +8,13 @@
   --
   <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/a.gif)
   --
+  --
     <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/b.gif)
+   --
+   --
+    <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/c.gif)
     --
-      <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/c.gif)
-      --
+    --
     <br />后台：    
     --
    <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/d.gif)
