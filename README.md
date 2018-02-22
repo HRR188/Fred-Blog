@@ -13,9 +13,9 @@ Algolia驱动的全文搜索
 UEdeitor富文本编辑器
 
 项目概述
-项目名称：Fred Blog
-项目运行地址：http://blog.fyguoji.cn
-项目后台演示地址：http://demo.fyguoji.cn
+> 项目名称：Fred Blog
+> 项目运行地址：http://blog.fyguoji.cn
+> 项目后台演示地址：http://demo.fyguoji.cn
 已经升级至Laravel 5.5 版本。
 
 目前运行环境
@@ -38,16 +38,13 @@ CentOs 6.8
 然后在.env的配置文件里面修改如下配置项：
 
 #Algolia驱动
-ALGOLIA_APP_ID=
-ALGOLIA_SECRET=
+> ALGOLIA_APP_ID=
+> ALGOLIA_SECRET=
 
 #数据库
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=
-DB_USERNAME=
-DB_PASSWORD=
+> DB_DATABASE=
+> DB_USERNAME=
+> DB_PASSWORD=
 
 5. 执行数据库迁移（想要初始数据也可以看下一步）
 php artisan migrate
