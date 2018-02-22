@@ -2,7 +2,7 @@
 本项目迁移至github,欢迎老铁们下载使用
 
 本项目使用 PHP 框架 Laravel 5.5 进行开发。 这是博主给自己搭建的博文平台，具有普遍性的博客功能，欢迎大家在此基础上自由开发。PS：部分代码带有吐槽注释~
-![image](http://laravel-video1.oss-cn-beijing.aliyuncs.com/demo/demo1.gif)
+![image](http://)
 
 博客功能具有以下功能
 分类管理
