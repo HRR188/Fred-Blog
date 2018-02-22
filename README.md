@@ -5,12 +5,19 @@
 
   <br />废话不说，上图，看上了再往下看
   <br />前台：
+  --
   <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/a.gif)
+  --
     <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/b.gif)
+    --
       <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/c.gif)
+      --
     <br />后台：    
-   <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/e.gif)
-   <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/f.gif)
+    --
+   <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/d.gif)
+   --
+   <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/e.gif)
+   --
    
 博客功能具有以下功能
 分类管理
