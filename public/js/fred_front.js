@@ -160,14 +160,15 @@ $(function(){
 // }
 
 $(function(){
-    $('#weixin').on('open.popover.amui',function(){
+    $('#weixin').click(function(){
         $('#intro').children('h2').children().html('微信');
-        $('#intro').children('img').eq(0).hide();
-        $('#intro').children('img').eq(1).show();
+        $('#intro').children('img').eq(0).hide('slow');
+        $('#intro').children('img').eq(1).show('slow');
+        setTimeout(function(){
+            $('#intro').children('h2').children().html('博客介绍');
+            $('#intro').children('img').eq(1).hide('slow');
+            $('#intro').children('img').eq(0).show('slow');
+        },5000);
     });
-    $('#weixin').on('close.popover.amui',function(){
-        $('#intro').children('h2').children().html('博客介绍');
-        $('#intro').children('img').eq(1).hide();
-        $('#intro').children('img').eq(0).show();
-    })
+
 });

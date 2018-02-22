@@ -54,8 +54,8 @@
         <h2 class="blog-text-center blog-title"><span>Contact ME</span></h2>
         <p>
             <a href="http://shang.qq.com/open_webaio.html?sigt=1552b9064235e461dc8fca0e2e6ee14c4dfebe6fd59c591643f95d8f5de7bc596ddbd9adf6038b9565816aba1f83343f&sigu=41731609037d69e8e274c35d187d6bc7f07cee677d4fe4607c58695aec8c80f303756f4d41d943d7&tuin=1561618920"><span class="am-icon-qq am-icon-fw am-primary blog-icon" data-am-popover="{content: '点我发起聊天', trigger: 'hover focus'}"></span></a>
-            <a href="javascript:;" data-am-popover="{content: '技术问题QQ联系，对象问题微信联系', trigger: 'hover focus'}" id="weixin"><span class="am-icon-weixin am-icon-fw blog-icon"></span></a>
-            <a href="" data-am-popover="{content: '下载博客全站源码去基友hub也行', trigger: 'hover focus'}"><span class="am-icon-github am-icon-fw blog-icon"></span></a>
+            <a href="javascript:;" data-am-popover="{content: '技术问题QQ联系，找对象点我可扫微信', trigger: 'hover focus'}" id="weixin"><span class="am-icon-weixin am-icon-fw blog-icon"></span></a>
+            <a href="https://github.com/Fredchen188/Fred-Blog" data-am-popover="{content: '点我去基佬hub下载~', trigger: 'hover focus'}"><span class="am-icon-github am-icon-fw blog-icon"></span></a>
 
         </p>
     </div>
