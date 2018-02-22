@@ -17,11 +17,12 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->integer('cate_id');
             $table->softDeletes();
-            $table->timestamps();
+			$table->string('intro',1000);
             $table->string('title');
-            $table->string('content',1500);
+            $table->string('content',12000);
             $table->string('p_image',200)->default('/assets/img/pimage.png');
             $table->integer('visit');
+			$table->timestamps();
         });
     }
 
