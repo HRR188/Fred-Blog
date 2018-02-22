@@ -15,7 +15,7 @@
                         @endforeach
                     </span>
                     <h1><a href="/post/{{$post->id}}">{{str_limit($post->title,20,'...')}}</a></h1>
-                    <p>{!!str_limit($post->content,50,'...')!!}
+                    <p>{{str_limit( strip_tags($post->content),50,'...')}}
                     </p>
                 </div>
             </article>
