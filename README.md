@@ -12,7 +12,7 @@
 
   <br />后台：   
 
-  <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/d.gif)   
+  <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/admin1.gif)   
 
   <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/e.gif)
 
