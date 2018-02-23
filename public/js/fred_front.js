@@ -201,3 +201,4 @@ function showColumnPost(id){
         }
     });
 }
+SyntaxHighlighter.all();

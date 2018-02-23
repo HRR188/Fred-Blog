@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="/assets_front/css/amazeui.css">
     <link rel="stylesheet" href="/assets_front/css/app.css">
     <script src="/js/jquery.js"></script>
+    <script src="/js/third-party/SyntaxHighlighter/shCore.js"></script>
+    <link rel="stylesheet" href="/js/third-party/SyntaxHighlighter/shCoreDefault.css">
 
 </head>
 

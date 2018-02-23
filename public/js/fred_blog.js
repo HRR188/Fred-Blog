@@ -22,6 +22,7 @@ $(document).ready(function () {
         $('#flash-overlay-modal').modal('hide');
     }, 1000)
 });
+SyntaxHighlighter.all();
 //查看comment，并且将为查看的消息发异步，将read设为1
 function showComment(id,title, time,nickname,content) {
     $('.am-dropdown').dropdown('close');

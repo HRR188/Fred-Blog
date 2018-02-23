@@ -108,6 +108,7 @@
 
     @endsection
 @section('_js')
+
     <script>
         function sendBack(pid,cid) {
             $('#my-comment').on('open.modal.amui', function () {
