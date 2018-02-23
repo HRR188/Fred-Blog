@@ -1,35 +1,22 @@
 @if (count($errors) > 0)
-<div class="modal fade" id="modal-error">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">请注意</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <i class="fa fa-info-circle fa-4x"></i>
-                    </div>
-                    <div class="col-sm-9">
-                        @foreach ($errors->all() as $error)
-                            {{ $error }}<br>
-                        @endforeach
-                    </div>
+    <div class="am-modal am-modal-alert" tabindex="-1" id="my-errors">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">有错误哦~</div>
+            <div class="am-modal-bd">
+                <div class="alert-danger" id="info">
+                    @foreach ($errors->all() as $error)
+                        {{ $error }}<br>
+                    @endforeach
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <div class="am-modal-footer">
+                <span class="am-modal-btn">确定</span>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<script>
-    require(['bootstrap'], function ($) {
-        $('#modal-error').modal('show');
-    });
-    setTimeout(function(){
-        $('#modal-error').modal('hide');
-    },3000);
-</script>
+        </div>
+    </div>
+    <script src="/assets_admin/js/amazeui.min.js"></script>
+    <script>
+        console.log(123)
+          $('#my-errors').modal()
+    </script>
 @endif
