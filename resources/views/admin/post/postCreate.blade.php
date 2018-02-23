@@ -7,7 +7,7 @@
     <script src="https://cdn.bootcss.com/jqueryui/1.12.0/jquery-ui.js"></script>
     <script src="/js/jquery.fileupload.js"></script>
     <script src="/js/jquery.fileupload-process.js"></script>
-    <script src="/js/jquery.fileupload-pImage.js"></script>
+    <script src="/js/jquery.fileupload-image.js"></script>
     <script src="/js/jquery.iframe-transport.js"></script>
     <script type="text/javascript" charset="utf-8" src="/js/ueditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="/js/ueditor.all.min.js"> </script>
