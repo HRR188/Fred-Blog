@@ -61,7 +61,7 @@
                             <div class="am-form-group">
                                 <label for="user-name" class="am-u-sm-3 am-form-label">摘要 <span class="tpl-form-line-small-title">Intro</span></label>
                                 <div class="am-u-sm-9">
-                                    <input type="text" class="tpl-form-input" name="intro" placeholder="默认文章前100字" value="">
+                                    <input type="text" class="tpl-form-input" name="intro" placeholder="默认文章前100字" value="{{$post->intro}}">
                                     <small>自己修改最好~</small>
                                 </div>
                             </div>

@@ -178,7 +178,7 @@
                                 </div>
                             </div>
                         </form>
-                      @include('admin.errors')
+                        @include('admin.errors')
                     </div>
                 </div>
             </div>
