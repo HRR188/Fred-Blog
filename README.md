@@ -16,15 +16,16 @@
 
   <br />![image](https://github.com/Fredchen188/Fred-Blog/blob/master/public/img/e.gif)
 
-博客功能具有以下功能
-分类管理
-文章管理
-标签管理
-专题深度探讨专栏
-评论管理（博主可以通过后台直接回复，或者进行新消息的接受）
-导航管理
-Algolia驱动的全文搜索
-UEdeitor富文本编辑器
+博客功能具有以下功能  
+
+分类管理  
+文章管理  
+标签管理  
+专题深度探讨专栏      
+评论管理（博主可以通过后台直接回复，或者进行新消息的接受）  
+导航管理  
+Algolia驱动的全文搜索  
+UEdeitor富文本编辑器  
 
 项目概述
 > 项目名称：Fred Blog
