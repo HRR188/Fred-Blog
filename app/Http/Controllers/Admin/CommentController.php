@@ -25,9 +25,9 @@ class CommentController extends Controller
     }
 
     //更新read状态
-    public function read($id)
+    public function read(Request $request)
     {
-        $comment = Comment::find($id);
+        $comment = Comment::find($request->id);
         $comment->read = 1;
         $comment->save();
         return response()->json(['code'=>200]);
@@ -60,7 +60,7 @@ class CommentController extends Controller
         $newComment->save();
         return response()->json(['code'=>200]);
     }
-
+//
     //删除评论(并且删除此评论的评论)
     public function deleteComment($id)
     {
