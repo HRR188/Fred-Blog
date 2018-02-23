@@ -138,6 +138,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        $post->unsearchable();
         $post->comments()->delete();
         Post::where('id', $id)->delete();
         return response()->json(['code' => 200]);
@@ -155,6 +156,7 @@ class PostController extends Controller
     public function postsDelete(Request $request, Post $post)
     {
         foreach ($request->posts as $post) {
+            Post::find($post)->unsearchable();
             Post::where('id', $post)->delete();
             Post::find($post)->comments()->delete();
         }
@@ -174,6 +176,7 @@ class PostController extends Controller
     {
         foreach ($request->posts as $id) {
             Post::withTrashed()->where('id', $id)->restore();
+            Post::withTrashed()->where('id', $id)->searchable();
             Post::withTrashed()->find($id)->comments()->restore();
         }
         return response()->json(['code' => 200]);
@@ -183,6 +186,7 @@ class PostController extends Controller
     public function recoverPost($id)
     {
         Post::withTrashed()->where('id', $id)->restore();
+        Post::withTrashed()->where('id', $id)->searchable();
         Post::withTrashed()->find($id)->comments()->restore();
         return response()->json(['code' => 200]);
     }
